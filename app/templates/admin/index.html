@@ -14,15 +14,13 @@
     <!-- Project Card Example -->
         <div class="card shadow mb-4">
             <div class="card-body">
-
-            </div>
             {% if app_list %}
                 {% for app in app_list %}
-                    <div class="app-{{ app.app_label }} module table-responsive">
-                    <header>
-                        <a href="{{ app.app_url }}" class="section" title="{% blocktrans with name=app.name %}Models in the {{ name }} application{% endblocktrans %}">{{ app.name }}</a>
-                    </header>
-                    <table class="table table-bordered">
+                    <h5 class="card-title">
+                        {{ app.name }}
+                    </h5>
+                    <div class="app-{{ app.app_label }} table-responsive">
+                    <table class="table">
                     {% for model in app.models %}
                         <tr class="model-{{ model.object_name|lower }}">
                         {% if model.admin_url %}
@@ -51,16 +49,18 @@
                 <p>{% trans "You don't have permission to edit anything." %}</p>
             {% endif %}
             </div>
+        </div><!-- end apps cards -->
 
-    </div><!-- end apps cards -->
+    </div><!-- end apps col-8 -->
     <div class="col-lg-4 mb-4">
     <!-- Project Card Example -->
         <div class="card shadow mb-4">
             {% block sidebar %}
-            <div>
-                <div class="module" id="recent-actions-module">
-                    <h2>{% trans 'Recent Actions' %}</h2>
-                    <h3>{% trans 'My Actions' %}</h3>
+            <div class="card-body">
+                <h5 class="card-title">{% trans 'Recent Actions' %}</h5>
+                <div  id="recent-actions-module">
+
+                    <h6>{% trans 'My Actions' %}</h6>
                         {% load log %}
                         {% get_admin_log 10 as admin_log for_user user %}
                         {% if not admin_log %}
