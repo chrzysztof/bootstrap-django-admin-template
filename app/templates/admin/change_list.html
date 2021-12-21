@@ -25,20 +25,25 @@
 
 {% block bodyclass %}{{ block.super }} app-{{ opts.app_label }} model-{{ opts.model_name }} change-list{% endblock %}
 
-{% if not is_popup %}
-{% block breadcrumbs %}
-<div class="breadcrumbs">
-<a href="{% url 'admin:index' %}">{% translate 'Home' %}</a>
-&rsaquo; <a href="{% url 'admin:app_list' app_label=cl.opts.app_label %}">{{ cl.opts.app_config.verbose_name }}</a>
-&rsaquo; {{ cl.opts.verbose_name_plural|capfirst }}
-</div>
-{% endblock %}
-{% endif %}
-
+            {% if not is_popup %}
+            {% block breadcrumbs %}
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12 mb-4">
+                         <span class="breadcrumbs">
+                            <a href="{% url 'admin:index' %}">{% translate 'Home' %}</a>
+                            &rsaquo; <a href="{% url 'admin:app_list' app_label=cl.opts.app_label %}">{{ cl.opts.app_config.verbose_name }}</a>
+                            &rsaquo; {{ cl.opts.verbose_name_plural|capfirst }}
+                        </span>
+                    </div>
+                </div>
+            </div>
+            {% endblock %}
+            {% endif %}
 {% block coltype %}{% endblock %}
 
 {% block content %}
-  <div id="content-main">
+  <div >
     {% block object-tools %}
         <ul class="object-tools">
           {% block object-tools-items %}
@@ -52,8 +57,8 @@
         </p>
         {{ cl.formset.non_form_errors }}
     {% endif %}
-    <div class="module{% if cl.has_filters %} filtered{% endif %} row" >
-          <div class="col-lg-8 mb-4">
+    <div class="{% if cl.has_filters %} filtered{% endif %} row" >
+          <div class="col-lg-9 mb-4">
 
           <!-- Project Card Example -->
           <div class="card shadow mb-4">
@@ -74,7 +79,8 @@
                 </form>
             </div>
           </div>
-          <div class="col-lg-4 mb-4">
+          </div>
+          <div class="col-lg-3 mb-4">
 
           <!-- Project Card Example -->
           <div class="card shadow mb-4">
@@ -82,10 +88,10 @@
               {% block filters %}
                 {% if cl.has_filters %}
                   <div>
-                    <h2>{% translate 'Filter' %}</h2>
-                    {% if cl.has_active_filters %}<h3 id="changelist-filter-clear">
+                    <h5>{% translate 'Filter' %}</h5>
+                    {% if cl.has_active_filters %}<h6 id="changelist-filter-clear">
                       <a href="{{ cl.clear_all_filters_qs }}">&#10006; {% translate "Clear all filters" %}</a>
-                    </h3>{% endif %}
+                    </h6>{% endif %}
                     {% for spec in cl.filter_specs %}{% admin_list_filter cl spec %}{% endfor %}
                   </div>
                 {% endif %}
@@ -99,5 +105,5 @@
       </div>
 
     </div>
-    </div></div>
+    </div>
 {% endblock %}

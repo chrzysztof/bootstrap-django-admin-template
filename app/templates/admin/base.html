@@ -295,21 +295,22 @@
             <!-- End of Topbar -->
         <div id="content">
                     <!-- Page Heading -->
-
-                        <div class="container-fluid d-sm-flex align-items-center justify-content-between mb-4">
-                            {% block pretitle %}{% endblock %}
-                            {% block content_title %}{% if title %}<h1 class="h3 mb-0 text-gray-800">{{ title }}</h1>{% endif %}{% endblock %}
-                            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                    class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
-                        </div>
-    {% if not is_popup %}
-    {% block breadcrumbs %}
-    <div class="breadcrumbs">
-    <a href="{% url 'admin:index' %}">{% trans 'Home' %}</a>
-    {% if title %} &rsaquo; {{ title }}{% endif %}
-    </div>
-    {% endblock %}
-    {% endif %}
+            <div class="container-fluid d-sm-flex align-items-center justify-content-between mb-4">
+                {% block pretitle %}{% endblock %}
+                {% block content_title %}{% if title %}<h1 class="h3 mb-0 text-gray-800">{{ title }}</h1>{% endif %}{% endblock %}
+                <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                        class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+            </div>
+            {% if not is_popup %}
+            {% block breadcrumbs %}
+                    <div class="row">
+                        <span class="breadcrumbs">
+                        <a href="{% url 'admin:index' %}">{% trans 'Home' %}</a>
+                        {% if title %} &rsaquo; {{ title }}{% endif %}
+                        </span>
+                    </div>
+            {% endblock %}
+            {% endif %}
 
     {% block messages %}
         {% if messages %}
