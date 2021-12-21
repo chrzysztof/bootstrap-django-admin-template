@@ -42,7 +42,6 @@
 
             <!-- Divider -->
             <hr class="sidebar-divider">
-        {% if app_list %}
                 {% for app in app_list %}
                 <!-- Heading -->
                     <div class="sidebar-heading">
@@ -80,10 +79,8 @@
                     {% endfor %}
                         <!-- Divider -->
             <hr class="sidebar-divider">
-                {% endfor %}
-            {% else %}
-                <p>{% trans "You don't have permission to edit anything." %}</p>
-            {% endif %}
+            {% endfor %}
+
 
         </ul>
         <!-- End of Sidebar -->
