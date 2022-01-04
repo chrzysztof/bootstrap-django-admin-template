@@ -9900,8 +9900,7 @@ a:focus {
 }
 
 .bg-gradient-primary {
-  background-color: #4e73df;
-  background-image: linear-gradient(180deg, #4e73df 10%, #224abe 100%);
+  background: #0c1427;
   background-size: cover;
 }
 
@@ -10475,8 +10474,13 @@ a:focus {
 .sidebar .sidebar-heading {
   text-align: center;
   padding: 0 1rem;
-  font-weight: 800;
-  font-size: 0.65rem;
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: .5px;
+    margin-bottom: 1.5rem;
+    height: 15px;
+    color: #fff;
 }
 
 .sidebar .sidebar-card {
@@ -10535,7 +10539,7 @@ a:focus {
     display: block;
     width: 100%;
     text-align: left;
-    padding: 1rem;
+    padding: 0.25rem 1.1rem;
     width: 14rem;
   }
   .sidebar .nav-item .nav-link i {
@@ -10682,15 +10686,16 @@ a:focus {
 }
 
 .sidebar-dark hr.sidebar-divider {
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
+     background-color: rgba(255, 255, 255, 0.15);
+    margin: 1.25rem;
 }
 
 .sidebar-dark .sidebar-heading {
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 1);
 }
 
 .sidebar-dark .nav-item .nav-link {
-  color: rgba(255, 255, 255, 0.8);
+ color: #7987a1;
 }
 
 .sidebar-dark .nav-item .nav-link i {
@@ -10698,11 +10703,11 @@ a:focus {
 }
 
 .sidebar-dark .nav-item .nav-link:active, .sidebar-dark .nav-item .nav-link:focus, .sidebar-dark .nav-item .nav-link:hover {
-  color: #fff;
+  color: #6571ff;
 }
 
 .sidebar-dark .nav-item .nav-link:active i, .sidebar-dark .nav-item .nav-link:focus i, .sidebar-dark .nav-item .nav-link:hover i {
-  color: #fff;
+  color: #6571ff;
 }
 
 .sidebar-dark .nav-item .nav-link[data-toggle="collapse"]::after {

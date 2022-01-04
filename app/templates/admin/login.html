@@ -8,9 +8,9 @@
  {% block extrastyle %}
      <link href='{% static 'vendor/fontawesome-free/css/all.min.css' %}' rel="stylesheet" type="text/css">
     <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        href="https://fonts.googleapis.com/css?family=Roboto:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
-  <link rel='stylesheet' href='{% static 'css/sb-admin-2.min.css' %}'>
+  <link rel='stylesheet' href='{% static 'css/sb-admin-2.css' %}'>
 {% endblock %}
 {% if LANGUAGE_BIDI %}<link rel="stylesheet" type="text/css" href="{% block stylesheet_rtl %}{% static "admin/css/rtl.css" %}{% endblock %}" />{% endif %}
 {% block extrahead %}{% endblock %}
@@ -45,14 +45,14 @@
         <!-- Outer Row -->
         <div class="row justify-content-center">
 
-            <div class="col-xl-10 col-lg-12 col-md-9">
+            <div class="col-xl-8 col-lg-12 col-md-9">
 
                 <div class="card o-hidden border-0 shadow-lg my-5">
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
-                            <div class="col-lg-7 d-none d-lg-block bg-login-image"></div>
-                            <div class="col-lg-5">
+                            <div class="col-lg-5 d-none d-lg-block bg-login-image"></div>
+                            <div class="col-lg-7">
                                 <div class="p-5">
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Log In!</h1>
@@ -60,13 +60,13 @@
                                   <form action="{{ app_path }}" method="post" id="login-form" class="user">{% csrf_token %}
                                       <div class="form-group">
                                         {{ form.username.errors }}
-                                        <div>{{ form.username.label_tag }} </div>
-                                        {{ form.username }}
+                                        <div class="small">{{ form.username.label_tag }} </div>
+                                        <div class="input-group col-xs-12">{{ form.username }}</div>
                                       </div>
                                       <div class="form-group">
                                         {{ form.password.errors }}
-                                        <div>{{ form.password.label_tag }} </div>
-                                        {{ form.password }}
+                                        <div class="small">{{ form.password.label_tag }} </div>
+                                        <div class="input-group col-xs-12">{{ form.password }}</div>
                                         <input type="hidden" name="next" value="{{ next }}">
                                       </div>
                                       {% url 'admin_password_reset' as password_reset_url %}
