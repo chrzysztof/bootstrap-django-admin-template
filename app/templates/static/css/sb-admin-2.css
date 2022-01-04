@@ -4488,11 +4488,11 @@ input[type="button"].btn-block {
   display: flex;
   flex-direction: column;
   min-width: 0;
-  word-wrap: break-word;
-  background-color: #fff;
-  background-clip: border-box;
-  border: 1px solid #e3e6f0;
-  border-radius: 0.35rem;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid #f2f4f9;
+    border-radius: 0.25rem;
 }
 
 .card > hr {
@@ -7570,7 +7570,10 @@ button.bg-dark:focus {
 }
 
 .shadow {
-  box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15) !important;
+      box-shadow: 0 0 10px 0 rgb(183 192 206 / 20%) !important;
+    -webkit-box-shadow: 0 0 10px 0 rgb(183 192 206 / 20%) !important;
+    -moz-box-shadow: 0 0 10px 0 rgba(183,192,206,.2) !important;
+    -ms-box-shadow: 0 0 10px 0 rgba(183,192,206,.2) !important;
 }
 
 .shadow-lg {

@@ -4,7 +4,7 @@
 <head>
 <title>{% block title %}{% endblock %}</title>
     {% load static %}
-<link rel="stylesheet" type="text/css" href="{% block stylesheet %}{% static "admin/css/base.css" %}{% endblock %}" />
+
  {% block extrastyle %}
      <link href='{% static 'vendor/fontawesome-free/css/all.min.css' %}' rel="stylesheet" type="text/css">
     <link
@@ -248,8 +248,8 @@
                             {% block welcome-msg %}
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small"><strong>{% trans 'Welcome,' %} <br>{% firstof user.get_short_name user.get_username %}</strong>.</span>
                             {% endblock %}
-                            <img class="img-profile rounded-circle"
-                                src="img/undraw_profile.svg">
+                            <span class="icon-circle bg-light rounded-circle"
+                            ><i class="fa fa-user" aria-hidden="true"></i></span>
                         </a>
                         <!-- Dropdown - User Information -->
                         <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -285,7 +285,7 @@
                     <!-- Page Heading -->
             <div class="container-fluid d-sm-flex align-items-center justify-content-between mb-4">
                 {% block pretitle %}{% endblock %}
-                {% block content_title %}{% if title %}<h1 class="h3 mb-0 text-gray-800">{{ title }}</h1>{% endif %}{% endblock %}
+                {% block content_title %}{% if title %}<h1 class="h4 mb-0 text-dark">{{ title }}</h1>{% endif %}{% endblock %}
             </div>
             {% if not is_popup %}
             {% block breadcrumbs %}
