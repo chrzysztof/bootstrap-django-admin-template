@@ -11286,3 +11286,27 @@ footer.sticky-footer .copyright {
 body.sidebar-toggled footer.sticky-footer {
   width: 100%;
 }
+
+.vTextField, input[type="text"], textarea {
+        display: block;
+
+    padding: 0.469rem 0.8rem;
+    font-size: .875rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #000;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #e9ecef;
+    appearance: none;
+    border-radius: 0.25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.vTextField, input[type="text"], textarea {
+    color: #000;
+    background-color: #fff;
+    border-color: #ced4da;
+    outline: 0;
+    box-shadow: none;
+}
