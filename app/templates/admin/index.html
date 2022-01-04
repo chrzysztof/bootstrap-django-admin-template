@@ -16,9 +16,9 @@
             <div class="card-body">
             {% if app_list %}
                 {% for app in app_list %}
-                    <h5 class="card-title">
+                    <h6 class=" card-title">
                         {{ app.name }}
-                    </h5>
+                    </h6>
                     <div class="app-{{ app.app_label }} table-responsive">
                     <table class="table">
                     {% for model in app.models %}
@@ -57,10 +57,10 @@
         <div class="card shadow mb-4">
             {% block sidebar %}
             <div class="card-body">
-                <h5 class="card-title">{% trans 'Recent Actions' %}</h5>
+                <h6 class="card-title">{% trans 'Recent Actions' %}</h6>
                 <div  id="recent-actions-module">
 
-                    <h6>{% trans 'My Actions' %}</h6>
+                    <h6 class="small">{% trans 'My Actions' %}</h6>
                         {% load log %}
                         {% get_admin_log 10 as admin_log for_user user %}
                         {% if not admin_log %}
@@ -68,7 +68,7 @@
                         {% else %}
                         <ul class="actionlist">
                         {% for entry in admin_log %}
-                        <li class="{% if entry.is_addition %}addlink{% endif %}{% if entry.is_change %}changelink{% endif %}{% if entry.is_deletion %}deletelink{% endif %}">
+                        <li class="list-unstyled {% if entry.is_addition %}addlink{% endif %}{% if entry.is_change %}changelink{% endif %}{% if entry.is_deletion %}deletelink{% endif %}">
                             {% if entry.is_deletion or not entry.get_admin_url %}
                                 {{ entry.object_repr }}
                             {% else %}
